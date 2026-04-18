@@ -1,53 +1,52 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-100">
-    
+
     <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
-      
-      <h2 class="text-2xl font-bold text-center mb-6 text-gray-700">
-        Admin Login
+
+      <h2 class="text-2xl font-bold text-center mb-6">
+        Login Page
       </h2>
 
+      <!-- Already logged in message -->
+      <p v-if="isLoggedIn" class="text-green-600 text-center mb-4">
+        You are already logged in 
+      </p>
+
       <!-- Error -->
-      <p v-if="error" class="text-red-500 text-sm mb-4">
+      <p v-if="error" class="text-red-500 text-sm mb-3 text-center">
         {{ error }}
       </p>
 
       <!-- Email -->
-      <div class="mb-4">
-        <label class="block text-gray-600 mb-1">Email</label>
-        <input 
-          v-model="email"
-          type="email"
-          placeholder="Enter your email"
-          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-      </div>
+      <input
+        v-model="email"
+        type="email"
+        placeholder="Email"
+        class="w-full mb-3 px-4 py-2 border rounded-lg"
+      />
 
       <!-- Password -->
-      <div class="mb-6">
-        <label class="block text-gray-600 mb-1">Password</label>
-        <input 
-          v-model="password"
-          type="password"
-          placeholder="Enter your password"
-          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-      </div>
+      <input
+        v-model="password"
+        type="password"
+        placeholder="Password"
+        class="w-full mb-4 px-4 py-2 border rounded-lg"
+      />
 
-      <!-- Button -->
-      <button 
+      <!-- Login Button -->
+      <button
         @click="login"
-        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
       >
         Login
       </button>
 
-      <!-- Get User -->
-      <button 
-        @click="getUser"
-        class="w-full mt-3 border border-gray-300 py-2 rounded-lg hover:bg-gray-100"
+      <!-- Check Button -->
+      <button
+        @click="checkLogin"
+        class="w-full mt-3 border py-2 rounded-lg hover:bg-gray-100"
       >
-        Get User
+        Check Login Status
       </button>
 
     </div>
@@ -56,54 +55,60 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios"
 
 export default {
   data() {
     return {
-      email: '',
-      password: '',
-      token: '',
-      error: ''
+      email: "",
+      password: "",
+      error: "",
+      isLoggedIn: false,
     }
   },
+
+  mounted() {
+    this.checkLogin()
+  },
+
   methods: {
+
+    checkLogin() {
+      const token = localStorage.getItem("token")
+
+      if (token) {
+        this.isLoggedIn = true
+
+        // optional redirect
+        this.$router.push('/dashboard')
+      } else {
+        this.isLoggedIn = false
+      }
+    },
+
     async login() {
-      this.error = ''
+      this.error = ""
 
       try {
-        const res = await axios.post('/api/login', {
+        const res = await axios.post("/api/login", {
           email: this.email,
           password: this.password
         })
 
-        this.token = res.data.access_token
-        localStorage.setItem('token', this.token)
+        localStorage.setItem("token", res.data.access_token)
 
-        alert('Login successful ✅')
+        this.isLoggedIn = true
 
-      } catch (err) {
-        this.error = 'Invalid email or password ❌'
-      }
-    },
+        alert("Login success ")
 
-    async getUser() {
-      try {
-        const token = localStorage.getItem('token')
-
-        const res = await axios.get('/api/me', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-
-        console.log(res.data)
-        alert('User fetched ✅')
+        // redirect optional
+        this.$router.push("/dashboard")
 
       } catch (err) {
-        this.error = 'Unauthorized ❌'
+        this.error = "Invalid credentials"
       }
     }
+
   }
 }
 </script>

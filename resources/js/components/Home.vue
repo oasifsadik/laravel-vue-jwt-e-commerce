@@ -6,7 +6,7 @@
                 <div class="col-lg-7">
                     <div class="ltn__slide-active-2 slick-slide-arrow-1 slick-slide-dots-1 mb-30">
                         <!-- ltn__slide-item -->
-                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="img/slider/71.jpg">
+                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="/img/slider/71.jpg">
                             <div class="ltn__slide-item-inner">
                                 <div class="container">
                                     <div class="row">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <!-- ltn__slide-item -->
-                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="img/slider/62.jpg">
+                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="/img/slider/62.jpg">
                             <div class="ltn__slide-item-inner">
                                 <div class="container">
                                     <div class="row">
@@ -67,12 +67,12 @@
                 <div class="col-lg-5">
                     <div class="ltn__banner-item">
                         <div class="ltn__banner-img">
-                            <a href="shop.html"><img src="img/banner/17.jpg" alt="Banner Image"></a>
+                            <a href="shop.html"><img src="" alt="Banner Image"></a>
                         </div>
                     </div>
                     <div class="ltn__banner-item">
                         <div class="ltn__banner-img">
-                            <a href="shop.html"><img src="img/banner/18.jpg" alt="Banner Image"></a>
+                            <a href="shop.html"><img src="" alt="Banner Image"></a>
                         </div>
                     </div>
                 </div>

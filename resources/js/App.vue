@@ -58,7 +58,7 @@
                     <div class="col">
                         <div class="site-logo">
                             <!-- ✅ Fixed: /img/ instead of img/ -->
-                            <a href="index.html"><img src="{{ asset('fontend/img/logo.png') }}" alt="Logo"></a>
+                            <a href="index.html"><img :src="$asset('fontend/img/logo.png')" alt="Logo"></a>
                         </div>
                     </div>
                     <div class="col header-contact-serarch-column d-none d-xl-block">
@@ -197,15 +197,15 @@
                                                 <li>
                                                     <!-- ✅ Fixed -->
                                                     <a href="index.html">Home Style 01</a>
-                                                    <img src="/img/home-demos/home-1.jpg" alt="#">
+                                                    <img :src="$asset('/img/home-demos/home-1.jpg')" alt="#">
                                                 </li>
                                                 <li>
                                                     <a href="index-2.html">Home Style 02</a>
-                                                    <img src="/img/home-demos/home-2.jpg" alt="#">
+                                                    <img :src="$asset('/img/home-demos/home-2.jpg')" alt="#">
                                                 </li>
                                                 <li>
                                                     <a href="index-3.html">Home Style 03</a>
-                                                    <img src="/img/home-demos/home-3.jpg" alt="#">
+                                                    <img :src="$asset('/img/home-demos/home-3.jpg')" alt="#">
                                                 </li>
                                             </ul>
                                         </li>
@@ -257,7 +257,7 @@
                                                 </li>
                                                 <li>
                                                     <!-- ✅ Fixed -->
-                                                    <a href="shop.html"><img src="/img/banner/menu-banner-1.png" alt="#"></a>
+                                                    <a href="shop.html"><img :src="$asset('/img/banner/menu-banner-1.png')" alt="#"></a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -291,7 +291,7 @@
                 <div class="mini-cart-item clearfix">
                     <div class="mini-cart-img">
                         <!-- ✅ Fixed -->
-                        <a href="#"><img src="/img/product/1.png" alt="Image"></a>
+                        <a href="#"><img :src="$asset('/img/product/1.png')" alt="Image"></a>
                         <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
                     </div>
                     <div class="mini-cart-info">
@@ -301,7 +301,7 @@
                 </div>
                 <div class="mini-cart-item clearfix">
                     <div class="mini-cart-img">
-                        <a href="#"><img src="/img/product/2.png" alt="Image"></a>
+                        <a href="#"><img :src="$asset('/img/product/2.png')" alt="Image"></a>
                         <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
                     </div>
                     <div class="mini-cart-info">
@@ -311,7 +311,7 @@
                 </div>
                 <div class="mini-cart-item clearfix">
                     <div class="mini-cart-img">
-                        <a href="#"><img src="/img/product/3.png" alt="Image"></a>
+                        <a href="#"><img :src="$asset('/img/product/3.png')" alt="Image"></a>
                         <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
                     </div>
                     <div class="mini-cart-info">
@@ -321,7 +321,7 @@
                 </div>
                 <div class="mini-cart-item clearfix">
                     <div class="mini-cart-img">
-                        <a href="#"><img src="/img/product/4.png" alt="Image"></a>
+                        <a href="#"><img :src="$asset('/img/product/4.png')" alt="Image"></a>
                         <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
                     </div>
                     <div class="mini-cart-info">
@@ -350,7 +350,7 @@
             <div class="ltn__utilize-menu-head">
                 <div class="site-logo">
                     <!-- ✅ Fixed -->
-                    <a href="index.html"><img src="/img/logo.png" alt="Logo"></a>
+                    <a href="index.html"><img :src="$asset('/img/logo.png')" alt="Logo"></a>
                 </div>
                 <button class="ltn__utilize-close">×</button>
             </div>
@@ -449,7 +449,7 @@
                             <div class="footer-logo">
                                 <div class="site-logo">
                                     <!-- ✅ Fixed -->
-                                    <img src="/img/logo-2.png" alt="Logo">
+                                    <img :src="$asset('/img/logo-2.png')" alt="Logo">
                                 </div>
                             </div>
                             <p>Lorem Ipsum is simply dummy text of the and typesetting industry.</p>
@@ -534,7 +534,7 @@
                             </div>
                             <h5 class="mt-30">We Accept</h5>
                             <!-- ✅ Fixed -->
-                            <img src="/img/icons/payment-4.png" alt="Payment Image">
+                            <img :src="$asset('/img/icons/payment-4.png')" alt="Payment Image">
                         </div>
                     </div>
                 </div>
@@ -580,7 +580,7 @@
                                     <div class="col-lg-6 col-12">
                                         <div class="modal-product-img">
                                             <!-- ✅ Fixed -->
-                                            <img src="/img/product/4.png" alt="#">
+                                            <img :src="$asset('/img/product/4.png')" alt="#">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-12">
@@ -633,7 +633,7 @@
                                     <div class="col-12">
                                         <div class="modal-product-img">
                                             <!-- ✅ Fixed -->
-                                            <img src="/img/product/1.png" alt="#">
+                                            <img :src="$asset('/img/product/1.png')" alt="#">
                                         </div>
                                         <div class="modal-product-info">
                                             <h5><a href="product-details.html">Digital Stethoscope</a></h5>
@@ -670,7 +670,7 @@
                                     <div class="col-12">
                                         <div class="modal-product-img">
                                             <!-- ✅ Fixed -->
-                                            <img src="/img/product/7.png" alt="#">
+                                            <img :src="$asset('/img/product/7.png')" alt="#">
                                         </div>
                                         <div class="modal-product-info">
                                             <h5><a href="product-details.html">Digital Stethoscope</a></h5>

@@ -39,7 +39,11 @@
     <script src="{{ asset('fontend/js/plugins.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('fontend/js/main.js') }}"></script>
-  
+  <script>
+    window.Laravel = {
+        baseUrl: "{{ url('/') }}"
+    }
+</script>
 </body>
 
 </html>
